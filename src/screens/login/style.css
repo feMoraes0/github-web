@@ -2,7 +2,7 @@
 div.login-container {
   height: 100vh;
   max-width: 100vw;
-  background-color: #3461FC;
+  background-color: #6592ff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,6 +33,7 @@ div.login-box div.form form {
 }
 
 div.login-box div.form form input, div.login-box div.form form button {
+  width: 100%;
   height: 50px;
   padding: 10px;
   margin-bottom: 10px;
@@ -45,7 +46,7 @@ div.login-box div.form form input, div.login-box div.form form button {
 
 div.login-box div.form form button {
   margin-bottom: 0;
-  background-color: #3461FC;
+  background-color: #6592ff;
   color: white;
 }
 
