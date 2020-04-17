@@ -7,6 +7,7 @@ import Login from './screens/login';
 import Home from './screens/home';
 import Repositories from './screens/repositories';
 import Followers from './screens/followers';
+import Stars from './screens/stars';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -20,6 +21,9 @@ ReactDOM.render(
         </Route>
         <Route path='/repositories'>
           <Repositories />
+        </Route>
+        <Route path='/stars'>
+          <Stars />
         </Route>
         <Route path='/followers'>
           <Followers />

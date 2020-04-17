@@ -50,11 +50,11 @@ function AppBar() {
               projects
             </li>
           </Link>
-          <Link to='/'>
-            <li>
+          <Link to='/stars'>
+            <li className={(pathname === '/stars') ? 'active' : ''}>
               <FiStar />
               {' '}
-              star
+              stars
             </li>
           </Link>
           <Link to='/followers'>
