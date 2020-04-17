@@ -94,6 +94,7 @@ div.local-menu button {
   border-radius: 5px;
   border-color: #6592ff;
   color: #6592ff;
+  background-color: white;
 }
 div.local-menu button:hover {
   background-color: #6592ff;
@@ -107,6 +108,97 @@ div.local-menu a:hover {
   color: #ff185d !important;
 }
 
+/* === Local Body === */
+div.body {
+  background-color: transparent;
+  padding: 30px 60px;
+  overflow-y: auto;
+  height: 100vh;
+}
+div.body form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid silver;
+}
+div.body form input {
+  padding: 10px 20px;
+  width: 100%;
+  border: none;
+  font-size: 16px;
+}
+div.body form input:focus {
+  outline-width: 0;
+}
+div.body div.resume {
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 20px;
+}
+div.body div.resume div.resume-box {
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, .1);
+  border-radius: 10px;
+}
+div.body div.resume div.resume-box h6 {
+  font-size: 14px;
+  color:rgba(0, 0, 0, .5);
+  font-weight: 500;
+}
+div.body div.resume div.resume-box h3 {
+  font-size: 22px;
+  color:rgba(0, 0, 0, .8);
+}
 
-div.home-container div.body {
+div.body h6.title {
+  font-size: 18px;
+  color:rgba(0, 0, 0, .6);
+  margin-bottom: 10px;
+}
+div.body div.repositories {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-gap: 20px 5% ;
+}
+div.body div.repositories div.repository-box {
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #ff185d;
+  border-bottom: 5px solid #ff185d;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+  word-wrap: break-word;
+}
+div.body div.repositories div.repository-box:hover {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, .3);
+}
+div.body div.repositories div.repository-box h5.title {
+  font-size: 18px;
+  color: rgba(0, 0, 0, .8);
+  margin-bottom: 5px;
+}
+div.body div.repositories div.repository-box h6.description {
+  font-size: 16px;
+  color: rgba(0, 0, 0, .6);
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+div.body div.repositories div.repository-box div.repository-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+div.body div.repositories div.repository-box div.repository-footer h6 {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, .8);
+}
+div.body div.repositories div.repository-box div.repository-footer h6 svg {
+  margin-right: 5px;
+  margin-bottom: 2px;
 }
