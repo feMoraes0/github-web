@@ -3,7 +3,7 @@ div.app-bar {
   background-color: #6592ff;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
 }
 div.app-bar img {
   max-width: 50%;

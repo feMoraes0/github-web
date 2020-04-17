@@ -10,7 +10,7 @@ function Followers() {
 
   useEffect(() => {
     axios.get('https://api.github.com/users/feMoraes0/followers').then((response) => {
-      setFollowers([...followers, ...response.data]);
+      setFollowers((oldState) => [...oldState, ...response.data]);
     });
   }, []);
 

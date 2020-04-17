@@ -7,7 +7,6 @@ import {
   FiAlertOctagon,
 } from 'react-icons/fi';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import AppBar from '../../components/app-bar';
 
 function Repositories() {
@@ -19,7 +18,7 @@ function Repositories() {
 
   useEffect(() => {
     axios.get('https://api.github.com/users/feMoraes0/repos?per_page=100').then((response) => {
-      setRepositories([...repositories, ...response.data]);
+      setRepositories((oldState) => [...oldState, ...response.data]);
       let starsCounter = 0;
       let OpenIssuesCounter = 0;
       let forksCounter = 0;
@@ -32,6 +31,7 @@ function Repositories() {
       setStars(starsCounter);
       setOpenIssues(OpenIssuesCounter);
       setForks(forksCounter);
+      return null;
     });
   }, []);
 
@@ -100,6 +100,7 @@ function Repositories() {
                   </div>
                 );
               }
+              return null;
             })
           }
         </div>
