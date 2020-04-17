@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
 import {
-  FiGithub,
-  FiFolder,
-  FiUsers,
-  FiTag,
-  FiStar,
-  FiEye,
   FiAtSign,
   FiLink,
   FiMapPin,
@@ -15,9 +9,11 @@ import {
   FiLogOut,
   FiSearch,
   FiGitBranch,
+  FiStar,
 } from 'react-icons/fi';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import AppBar from '../../components/app-bar';
 
 function Home() {
   const [repositories, setRepositories] = useState([]);
@@ -30,56 +26,7 @@ function Home() {
 
   return (
     <div className='home-container'>
-      <div className='app-menu'>
-        <img src='../assets/logo-common.png' alt='internal-logo' />
-        <div className='menu-section'>
-          <h6>main</h6>
-          <ul>
-            <Link to='/home'>
-              <li>
-                <FiGithub />
-                {' '}
-                overview
-              </li>
-            </Link>
-            <Link to='/'>
-              <li>
-                <FiFolder />
-                {' '}
-                repositories
-              </li>
-            </Link>
-            <Link to='/'>
-              <li>
-                <FiTag />
-                {' '}
-                projects
-              </li>
-            </Link>
-            <Link to='/'>
-              <li>
-                <FiStar />
-                {' '}
-                star
-              </li>
-            </Link>
-            <Link to='/'>
-              <li>
-                <FiUsers />
-                {' '}
-                followers
-              </li>
-            </Link>
-            <Link to='/'>
-              <li>
-                <FiEye />
-                {' '}
-                following
-              </li>
-            </Link>
-          </ul>
-        </div>
-      </div>
+      <AppBar />
       <div className='local-menu'>
         <img src='https://avatars0.githubusercontent.com/u/23365401?v=4' alt='user' />
         <h4>Fernando de Moraes</h4>
