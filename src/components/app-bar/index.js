@@ -57,8 +57,8 @@ function AppBar() {
               star
             </li>
           </Link>
-          <Link to='/'>
-            <li>
+          <Link to='/followers'>
+            <li className={(pathname === '/followers') ? 'active' : ''}>
               <FiUsers />
               {' '}
               followers

@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from './screens/login';
 import Home from './screens/home';
 import Repositories from './screens/repositories';
+import Followers from './screens/followers';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -19,6 +20,9 @@ ReactDOM.render(
         </Route>
         <Route path='/repositories'>
           <Repositories />
+        </Route>
+        <Route path='/followers'>
+          <Followers />
         </Route>
       </Switch>
     </Router>
