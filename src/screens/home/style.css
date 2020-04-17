@@ -69,9 +69,6 @@ div.local-menu button:hover {
 div.local-menu a:hover {
   color: #3f3f3f;
 }
-.logout {
-  color: #ff185d !important;
-}
 
 /* === Local Body === */
 div.body {

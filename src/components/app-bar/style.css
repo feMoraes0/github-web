@@ -7,7 +7,7 @@ div.app-bar {
 }
 div.app-bar img {
   max-width: 50%;
-  margin: 30px 25% 60px;
+  margin: 30px 25%;
 }
 div.app-bar div.menu-section h6 {
   font-weight: 300;
@@ -16,9 +16,10 @@ div.app-bar div.menu-section h6 {
   margin-bottom: 10px;
   margin-left: 20px;
   color: #f1f1f1;
+  margin-top: 30px;
 }
 div.app-bar div.menu-section ul li {
-  padding: 15px;
+  padding: 12px 15px;
   text-transform: capitalize;
   color: #fff;
   font-size: 18px;

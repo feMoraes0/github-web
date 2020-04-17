@@ -1,29 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './style.css';
 import {
   FiAtSign,
   FiLink,
   FiMapPin,
-  FiLayers,
-  FiSettings,
-  FiLogOut,
   FiSearch,
-  FiGitBranch,
-  FiStar,
 } from 'react-icons/fi';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 import AppBar from '../../components/app-bar';
 
 function Home() {
-  const [repositories, setRepositories] = useState([]);
-
-  useEffect(() => {
-    axios.get('https://api.github.com/users/feMoraes0/repos?per_page=100').then((response) => {
-      setRepositories([...repositories, ...response.data]);
-    });
-  }, []);
-
   return (
     <div className='home-container'>
       <AppBar />
@@ -54,29 +40,6 @@ function Home() {
           </Link>
         </ul>
         <button type='button'>Full Profile</button>
-        <ul>
-          <Link to='/'>
-            <li>
-              <FiLayers />
-              {' '}
-              Groups
-            </li>
-          </Link>
-          <Link to='/'>
-            <li>
-              <FiSettings />
-              {' '}
-              Settings
-            </li>
-          </Link>
-          <Link to='/'>
-            <li className='logout'>
-              <FiLogOut />
-              {' '}
-              Logout
-            </li>
-          </Link>
-        </ul>
       </div>
       <div className='body'>
         <form>
@@ -110,31 +73,7 @@ function Home() {
           </div>
         </div>
         <h6 className='title'>Repositories</h6>
-        <div className='repositories'>
-          {
-            repositories.map((repository) => (
-              <div className='repository-box'>
-                <div>
-                  <h5 className='title'>{repository.name}</h5>
-                  <h6 className='description'>{repository.language}</h6>
-                  <h6 className='description'>{repository.description}</h6>
-                </div>
-                <div className='repository-footer'>
-                  <h6>
-                    <FiStar />
-                    {' '}
-                    {`${repository.stargazers_count} stars`}
-                  </h6>
-                  <h6>
-                    <FiGitBranch />
-                    {' '}
-                    {`${repository.forks_count} forks`}
-                  </h6>
-                </div>
-              </div>
-            ))
-          }
-        </div>
+        <div className='repositories' />
       </div>
     </div>
   );
