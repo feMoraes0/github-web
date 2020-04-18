@@ -5,7 +5,6 @@ import {
   FiGithub,
   FiFolder,
   FiUsers,
-  FiTag,
   FiStar,
   FiEye,
   FiLogOut,
@@ -32,13 +31,6 @@ function AppBar() {
               <FiFolder />
               {' '}
               repositories
-            </li>
-          </Link>
-          <Link to='/'>
-            <li>
-              <FiTag />
-              {' '}
-              projects
             </li>
           </Link>
           <Link to='/stars'>
