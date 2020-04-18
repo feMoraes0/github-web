@@ -1,0 +1,15 @@
+form.search-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid silver;
+}
+form.search-bar input {
+  padding: 10px 20px;
+  width: 100%;
+  border: none;
+  font-size: 16px;
+}
+form.search-bar input:focus {
+  outline-width: 0;
+}

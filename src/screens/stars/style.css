@@ -12,21 +12,6 @@ div.repository-body {
   overflow-y: scroll;
   height: 100vh;
 }
-div.repository-body form {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  border-bottom: 1px solid silver;
-}
-div.repository-body form input {
-  padding: 10px 20px;
-  width: 100%;
-  border: none;
-  font-size: 16px;
-}
-div.repository-body form input:focus {
-  outline-width: 0;
-}
 h6.title {
   font-size: 20px;
   margin: 20px 0px;

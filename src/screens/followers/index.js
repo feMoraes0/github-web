@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
-import { FiSearch } from 'react-icons/fi';
 import axios from 'axios';
 import AppBar from '../../components/app-bar';
+import SearchBar from '../../components/search-bar';
 
 function Followers() {
   const [followers, setFollowers] = useState([]);
@@ -18,15 +18,11 @@ function Followers() {
     <div className='followers-container'>
       <AppBar />
       <div className='followers-body'>
-        <form>
-          <FiSearch size={20} />
-          <input
-            type='text'
-            value={search}
-            onChange={(event) => setSearch(event.target.value)}
-            placeholder='Search follower'
-          />
-        </form>
+        <SearchBar
+          value={search}
+          setValue={setSearch}
+          placeholder='Search Follower'
+        />
         <h6 className='title'>
           Followers
           {' '}

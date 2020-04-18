@@ -4,7 +4,6 @@ import {
   FiAtSign,
   FiLink,
   FiMapPin,
-  FiSearch,
 } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import AppBar from '../../components/app-bar';
@@ -42,10 +41,6 @@ function Home() {
         <button type='button'>Full Profile</button>
       </div>
       <div className='body'>
-        <form>
-          <FiSearch size={20} />
-          <input type='text' placeholder='Search repository' />
-        </form>
         <div className='resume'>
           <div className='resume-box'>
             <h6>Commits</h6>

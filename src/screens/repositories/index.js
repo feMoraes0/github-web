@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
-import { FiSearch } from 'react-icons/fi';
 import axios from 'axios';
 import AppBar from '../../components/app-bar';
 import RepositoryCard from '../../components/repository-card';
+import SearchBar from '../../components/search-bar';
 
 function Repositories() {
   const [repositories, setRepositories] = useState([]);
@@ -35,15 +35,11 @@ function Repositories() {
     <div className='repository-container'>
       <AppBar />
       <div className='repository-body'>
-        <form>
-          <FiSearch size={20} />
-          <input
-            type='text'
-            value={search}
-            onChange={(event) => setSearch(event.target.value)}
-            placeholder='Search repository'
-          />
-        </form>
+        <SearchBar
+          value={search}
+          setValue={setSearch}
+          placeholder='Search Repository'
+        />
         <div className='resume'>
           <div className='resume-box'>
             <h6>Repositories</h6>
