@@ -12,14 +12,13 @@ function Login() {
   }
 
   return (
-    <div className='login-container'>
+    <div className='login-container bg-primary'>
       <div className='login-box'>
         <img src='../assets/logo-security.png' alt='logo' />
         <div className='form'>
           <form onSubmit={handleSubmit}>
-            <input type='text' placeholder='login' />
-            <input type='text' placeholder='password' />
-            <button type='submit'>Send</button>
+            <input type='text' placeholder='GitHub username' />
+            <button type='submit' className='bg-secondary'>Enter</button>
           </form>
         </div>
       </div>
