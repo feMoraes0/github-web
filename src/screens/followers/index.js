@@ -32,7 +32,7 @@ function Followers() {
           {' '}
           <span className='badge-count'>{followers.length}</span>
         </h6>
-        <div className='repositories'>
+        <div className='followers'>
           {
             followers.map((follower) => {
               if (search === '' || follower.login.toLowerCase().search(search.toLowerCase()) !== -1) {

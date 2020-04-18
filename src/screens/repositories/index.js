@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
-import {
-  FiSearch,
-  FiGitBranch,
-  FiStar,
-  FiAlertOctagon,
-} from 'react-icons/fi';
+import { FiSearch } from 'react-icons/fi';
 import axios from 'axios';
 import AppBar from '../../components/app-bar';
+import RepositoryCard from '../../components/repository-card';
 
 function Repositories() {
   const [repositories, setRepositories] = useState([]);
@@ -51,19 +47,19 @@ function Repositories() {
         <div className='resume'>
           <div className='resume-box'>
             <h6>Repositories</h6>
-            <h3>{repositories.length}</h3>
+            <h3 className='text-primary'>{repositories.length}</h3>
           </div>
           <div className='resume-box'>
             <h6>Stars</h6>
-            <h3>{stars}</h3>
+            <h3 className='text-primary'>{stars}</h3>
           </div>
           <div className='resume-box'>
             <h6>Forks</h6>
-            <h3>{forks}</h3>
+            <h3 className='text-primary'>{forks}</h3>
           </div>
           <div className='resume-box'>
             <h6>Open Issues</h6>
-            <h3>{openIssues}</h3>
+            <h3 className='text-primary'>{openIssues}</h3>
           </div>
         </div>
         <div className='repositories'>
@@ -71,33 +67,18 @@ function Repositories() {
             repositories.map((repository) => {
               if (search === '' || repository.name.toLowerCase().search(search.toLowerCase()) !== -1) {
                 return (
-                  <div className='repository-box'>
-                    <div>
-                      <h5 className='title'>
-                        <span className='label-status'>active</span>
-                        {repository.name}
-                      </h5>
-                      <h6 className='description'>{repository.language}</h6>
-                      <h6 className='description'>{repository.description}</h6>
-                    </div>
-                    <div className='repository-footer'>
-                      <h6>
-                        <FiStar />
-                        {' '}
-                        {`${repository.stargazers_count} stars`}
-                      </h6>
-                      <h6>
-                        <FiAlertOctagon />
-                        {' '}
-                        {`${repository.open_issues_count} open issues`}
-                      </h6>
-                      <h6>
-                        <FiGitBranch />
-                        {' '}
-                        {`${repository.forks_count} forks`}
-                      </h6>
-                    </div>
-                  </div>
+                  <RepositoryCard
+                    title={repository.name}
+                    titleUrl={repository.html_url}
+                    owner={repository.owner.login}
+                    ownerUrl={repository.owner.html_url}
+                    language={repository.language}
+                    description={repository.description}
+                    stars={repository.stargazers_count}
+                    issues={repository.open_issues_count}
+                    forks={repository.forks_count}
+                    license={(repository.license) ? repository.license.name : 'No license'}
+                  />
                 );
               }
               return null;

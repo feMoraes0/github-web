@@ -1,0 +1,38 @@
+div.repository-box {
+  padding: 15px;
+  border-bottom: 1px solid silver;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+  word-wrap: break-word;
+  margin-bottom: 20px;
+}
+div.repository-box h5.title {
+  font-size: 18px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+div.repository-box h6.description {
+  font-size: 16px;
+  color: rgba(0, 0, 0, .6);
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+div.repository-box div.repository-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+div.repository-box div.repository-footer h6 {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+}
+div.repository-box div.repository-footer h6 svg {
+  margin-right: 5px;
+  margin-bottom: 2px;
+}

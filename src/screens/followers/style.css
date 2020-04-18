@@ -49,12 +49,12 @@ div.followers-body div.resume div.resume-box h3 {
   color:rgba(0, 0, 0, .8);
 }
 
-div.followers-body div.repositories {
+div.followers-body div.followers {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
 }
-div.followers-body div.repositories div.followers-box {
+div.followers-body div.followers div.followers-box {
   padding: 15px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, .1);
   border-radius: 10px;
@@ -65,14 +65,14 @@ div.followers-body div.repositories div.followers-box {
   min-height: 180px;
   word-wrap: break-word;
 }
-div.followers-body div.repositories div.followers-box img {
+div.followers-body div.followers div.followers-box img {
   width: 50%;
   height: 50%;
   object-fit: cover;
   border-radius: 100%;
   margin-bottom: 15px;
 }
-div.followers-body div.repositories div.followers-box h5.title {
+div.followers-body div.followers div.followers-box h5.title {
   font-size: 18px;
   color: rgba(0, 0, 0, .8);
 }
