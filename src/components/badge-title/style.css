@@ -1,0 +1,12 @@
+h6.badge-title {
+  font-size: 20px;
+  margin: 20px 0px;
+}
+span.badge-count {
+  padding: 0px 10px;
+  line-height: 1.0;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 300;
+  margin-left: 5px;
+}

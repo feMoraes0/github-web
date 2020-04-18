@@ -12,43 +12,6 @@ div.followers-body {
   overflow-y: scroll;
   height: 100vh;
 }
-div.followers-body form {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  border-bottom: 1px solid silver;
-}
-div.followers-body form input {
-  padding: 10px 20px;
-  width: 100%;
-  border: none;
-  font-size: 16px;
-}
-div.followers-body form input:focus {
-  outline-width: 0;
-}
-div.followers-body div.resume {
-  margin: 30px auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
-}
-div.followers-body div.resume div.resume-box {
-  text-align: center;
-  padding: 15px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, .1);
-  border-radius: 10px;
-}
-div.followers-body div.resume div.resume-box h6 {
-  font-size: 14px;
-  color:rgba(0, 0, 0, .5);
-  font-weight: 500;
-}
-div.followers-body div.resume div.resume-box h3 {
-  font-size: 22px;
-  color:rgba(0, 0, 0, .8);
-}
-
 div.followers-body div.followers {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -75,19 +38,4 @@ div.followers-body div.followers div.followers-box img {
 div.followers-body div.followers div.followers-box h5.title {
   font-size: 18px;
   color: rgba(0, 0, 0, .8);
-}
-div.followers-body h6.title {
-  font-size: 20px;
-  color:rgba(0, 0, 0, .6);
-  margin: 20px 0px;
-}
-span.badge-count {
-  background-color: #6592ff;
-  padding: 0px 10px;
-  line-height: 1.0;
-  border-radius: 20px;
-  font-size: 16px;
-  color: white;
-  font-weight: 300;
-  margin-left: 5px;
 }

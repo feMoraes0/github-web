@@ -3,6 +3,7 @@ import './style.css';
 import axios from 'axios';
 import AppBar from '../../components/app-bar';
 import SearchBar from '../../components/search-bar';
+import BadgeTitle from '../../components/badge-title';
 
 function Followers() {
   const [followers, setFollowers] = useState([]);
@@ -23,11 +24,7 @@ function Followers() {
           setValue={setSearch}
           placeholder='Search Follower'
         />
-        <h6 className='title'>
-          Followers
-          {' '}
-          <span className='badge-count'>{followers.length}</span>
-        </h6>
+        <BadgeTitle title='Followers' counter={followers.length} />
         <div className='followers'>
           {
             followers.map((follower) => {

@@ -4,6 +4,7 @@ import axios from 'axios';
 import AppBar from '../../components/app-bar';
 import RepositoryCard from '../../components/repository-card';
 import SearchBar from '../../components/search-bar';
+import BadgeTitle from '../../components/badge-title';
 
 function Stars() {
   const [starRepositories, setStarRepositories] = useState([]);
@@ -25,11 +26,7 @@ function Stars() {
           setValue={setSearch}
           placeholder='Search Repository'
         />
-        <h6 className='title text-primary'>
-          Stars
-          {' '}
-          <span className='badge-count bg-primary'>{starRepositories.length}</span>
-        </h6>
+        <BadgeTitle title='Stars' counter={starRepositories.length} />
         <div className='repositories'>
           {
             starRepositories.map((repository) => {

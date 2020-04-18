@@ -25,7 +25,14 @@ body {
   background-color: #24292e !important;
   color: #ffffff;
 }
+.bg-secondary {
+  background-color: #e36209 !important;
+  color: #ffffff;
+}
 
 .text-primary {
   color: #24292e !important;
+}
+.text-secondary {
+  color: #e36209 !important;
 }

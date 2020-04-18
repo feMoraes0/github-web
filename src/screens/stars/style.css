@@ -4,23 +4,9 @@ div.repository-container {
   display: grid;
   grid-template-columns: 1fr 5fr;
 }
-
-/* === Local Body === */
 div.repository-body {
   background-color: transparent;
   padding: 30px 60px;
   overflow-y: scroll;
   height: 100vh;
-}
-h6.title {
-  font-size: 20px;
-  margin: 20px 0px;
-}
-span.badge-count {
-  padding: 0px 10px;
-  line-height: 1.0;
-  border-radius: 20px;
-  font-size: 16px;
-  font-weight: 300;
-  margin-left: 5px;
 }
