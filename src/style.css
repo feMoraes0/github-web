@@ -20,3 +20,12 @@ body {
   width: 100vw;
   overflow-x: hidden;
 }
+
+.bg-primary {
+  background-color: #24292e !important;
+  color: #ffffff;
+}
+
+.text-primary {
+  color: #24292e !important;
+}

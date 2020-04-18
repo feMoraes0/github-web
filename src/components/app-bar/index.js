@@ -8,8 +8,6 @@ import {
   FiTag,
   FiStar,
   FiEye,
-  FiLayers,
-  FiSettings,
   FiLogOut,
 } from 'react-icons/fi';
 
@@ -17,7 +15,7 @@ function AppBar() {
   const { pathname } = useLocation();
 
   return (
-    <div className='app-bar'>
+    <div className='app-bar bg-primary'>
       <img src='../assets/logo-common.png' alt='internal-logo' />
       <div className='menu-section'>
         <h6>main</h6>
@@ -27,13 +25,6 @@ function AppBar() {
               <FiGithub />
               {' '}
               overview
-            </li>
-          </Link>
-          <Link to='/'>
-            <li>
-              <FiLayers />
-              {' '}
-              groups
             </li>
           </Link>
           <Link to='/repositories'>
@@ -76,13 +67,6 @@ function AppBar() {
       <div className='menu-section'>
         <h6>other</h6>
         <ul>
-          <Link to='/'>
-            <li className={(pathname === '/') ? 'active' : ''}>
-              <FiSettings />
-              {' '}
-              settings
-            </li>
-          </Link>
           <Link to='/'>
             <li>
               <FiLogOut />

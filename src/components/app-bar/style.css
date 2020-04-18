@@ -1,6 +1,5 @@
 /* === App Menu === */
 div.app-bar {
-  background-color: #6592ff;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -13,13 +12,11 @@ div.app-bar div.menu-section h6 {
   font-weight: 300;
   font-size: 16px;
   text-transform: uppercase;
-  margin-bottom: 10px;
-  margin-left: 20px;
-  color: #f1f1f1;
-  margin-top: 30px;
+  margin: 30px 0px 10px 20px;
+  color: #a1a1a1;
 }
 div.app-bar div.menu-section ul li {
-  padding: 12px 15px;
+  padding: 13px;
   text-transform: capitalize;
   color: #fff;
   font-size: 18px;
@@ -27,12 +24,12 @@ div.app-bar div.menu-section ul li {
   flex-direction: row;
   align-items: center;
 }
+div.app-bar div.menu-section ul li.active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
 div.app-bar div.menu-section ul li:hover {
-  background-color: #3474fc;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 div.app-bar div.menu-section ul li svg {
   margin: 0px 15px 0px 10px;
-}
-.active {
-  background-color: #3474fc;
 }
