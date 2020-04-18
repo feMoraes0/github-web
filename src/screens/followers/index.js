@@ -4,6 +4,7 @@ import axios from 'axios';
 import AppBar from '../../components/app-bar';
 import SearchBar from '../../components/search-bar';
 import BadgeTitle from '../../components/badge-title';
+import FollowCard from '../../components/follow-card';
 
 function Followers() {
   const [followers, setFollowers] = useState([]);
@@ -30,12 +31,11 @@ function Followers() {
             followers.map((follower) => {
               if (search === '' || follower.login.toLowerCase().search(search.toLowerCase()) !== -1) {
                 return (
-                  <a rel='noopener noreferrer' target='_blank' href={follower.html_url}>
-                    <div className='followers-box'>
-                      <img src={follower.avatar_url} alt='follower' />
-                      <h5 className='title'>{follower.login}</h5>
-                    </div>
-                  </a>
+                  <FollowCard
+                    userUrl={follower.html_url}
+                    avatarUrl={follower.avatar_url}
+                    login={follower.login}
+                  />
                 );
               }
               return null;

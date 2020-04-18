@@ -1,4 +1,4 @@
-div.followers-container {
+div.following-container {
   width: 100vw;
   min-height: 100vh;
   display: grid;
@@ -6,13 +6,13 @@ div.followers-container {
 }
 
 /* === Local Body === */
-div.followers-body {
+div.following-body {
   background-color: transparent;
   padding: 30px 60px;
   overflow-y: scroll;
   height: 100vh;
 }
-div.followers-body div.followers {
+div.following-body div.following {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;

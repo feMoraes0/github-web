@@ -55,8 +55,8 @@ function AppBar() {
               followers
             </li>
           </Link>
-          <Link to='/'>
-            <li>
+          <Link to='/following'>
+            <li className={(pathname === '/following') ? 'active' : ''}>
               <FiEye />
               {' '}
               following
