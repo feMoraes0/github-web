@@ -5,16 +5,18 @@ div.home-container {
   grid-template-columns: 1fr 5fr;
 }
 div.body {
+  background-color: transparent;
+  padding: 30px 60px;
+  overflow-y: auto;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
-
 div.body div.dashboard {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-bottom: 20px;
 }
-
 div.user-card {
   display: flex;
   flex-direction: row;
@@ -52,7 +54,7 @@ div.user-card div.user-card-infos ul {
   list-style: none;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-bottom: 5px;
 }
 div.user-card div.user-card-infos ul li {
@@ -74,15 +76,6 @@ div.user-card div.user-card-infos button {
 }
 div.user-card div.user-card-infos button:hover {
   cursor: pointer;
-}
-
-
-/* === Local Body === */
-div.body {
-  background-color: transparent;
-  padding: 30px 60px;
-  overflow-y: auto;
-  height: 100vh;
 }
 div.body div.dashboard div.resume {
   margin-left: 15px;
@@ -110,9 +103,30 @@ div.body div.dashboard div.resume div.resume-box h6 {
 div.body div.dashboard div.resume div.resume-box h3 {
   font-size: 22px;
 }
-
 div.body h6.title {
   font-size: 18px;
   color:rgba(0, 0, 0, .6);
   margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+
+div.events div.event-card {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e36209;
+  color: rgba(0, 0, 0, 0.75);
+}
+div.events div.event-card h6.event-card-title {
+  font-size: 18px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+}
+div.events div.event-card h6.event-card-title svg {
+  margin-right: 10px;
+}
+div.events div.event-card h6.event-card-subtitle {
+  font-size: 15px;
+  font-weight: 400;
 }
