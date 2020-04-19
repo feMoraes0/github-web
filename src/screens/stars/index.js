@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 import AppBar from '../../components/app-bar';
 import RepositoryCard from '../../components/repository-card';
 import SearchBar from '../../components/search-bar';
@@ -9,12 +10,19 @@ import BadgeTitle from '../../components/badge-title';
 function Stars() {
   const [starRepositories, setStarRepositories] = useState([]);
   const [search, setSearch] = useState('');
+  const history = useHistory();
 
   useEffect(() => {
-    axios.get('https://api.github.com/users/feMoraes0/starred').then((response) => {
-      setStarRepositories((oldState) => [...oldState, ...response.data]);
-      return null;
-    });
+    const localUser = sessionStorage.getItem('user_github');
+    if (localUser === null) {
+      sessionStorage.clear();
+      history.push('/');
+    } else {
+      axios.get('https://api.github.com/users/feMoraes0/starred').then((response) => {
+        setStarRepositories((oldState) => [...oldState, ...response.data]);
+        return null;
+      });
+    }
   }, []);
 
   return (

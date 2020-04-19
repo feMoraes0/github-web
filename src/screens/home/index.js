@@ -6,6 +6,7 @@ import {
   FiGitBranch,
   FiStar,
 } from 'react-icons/fi';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import AppBar from '../../components/app-bar';
 import BadgeTitle from '../../components/badge-title';
@@ -13,14 +14,21 @@ import BadgeTitle from '../../components/badge-title';
 function Home() {
   const [events, setEvents] = useState([]);
   const [user, setUser] = useState({});
+  const history = useHistory();
 
   useEffect(() => {
-    axios.get('https://api.github.com/users/feMoraes0').then((response) => {
-      setUser(response.data);
-    });
-    axios.get('https://api.github.com/users/feMoraes0/received_events').then((response) => {
-      setEvents((oldState) => [...oldState, ...response.data]);
-    });
+    const localUser = sessionStorage.getItem('user_github');
+    if (localUser === null) {
+      sessionStorage.clear();
+      history.push('/');
+    } else {
+      axios.get(`https://api.github.com/users/${localUser}`).then((response) => {
+        setUser(response.data);
+      });
+      axios.get(`https://api.github.com/users/${localUser}/received_events`).then((response) => {
+        setEvents((oldState) => [...oldState, ...response.data]);
+      });
+    }
   }, []);
 
 

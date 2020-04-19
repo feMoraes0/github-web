@@ -33,3 +33,9 @@ div.app-bar div.menu-section ul li:hover {
 div.app-bar div.menu-section ul li svg {
   margin: 0px 15px 0px 10px;
 }
+
+div.app-bar div.menu-section ul button {
+  background-color: transparent;
+  width: 100%;
+  border: none;
+}

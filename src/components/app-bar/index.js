@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useHistory } from 'react-router-dom';
 import {
   FiGithub,
   FiFolder,
@@ -12,6 +12,12 @@ import {
 
 function AppBar() {
   const { pathname } = useLocation();
+  const history = useHistory();
+
+  function logout() {
+    sessionStorage.clear();
+    history.push('/');
+  }
 
   return (
     <div className='app-bar bg-primary'>
@@ -19,8 +25,8 @@ function AppBar() {
       <div className='menu-section'>
         <h6>main</h6>
         <ul>
-          <Link to='/home'>
-            <li className={(pathname === '/home') ? 'active' : ''}>
+          <Link to='/overview'>
+            <li className={(pathname === '/overview') ? 'active' : ''}>
               <FiGithub />
               {' '}
               overview
@@ -59,13 +65,13 @@ function AppBar() {
       <div className='menu-section'>
         <h6>other</h6>
         <ul>
-          <Link to='/'>
+          <button type='button' onClick={logout}>
             <li>
               <FiLogOut />
               {' '}
               logout
             </li>
-          </Link>
+          </button>
         </ul>
       </div>
     </div>

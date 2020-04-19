@@ -17,7 +17,7 @@ ReactDOM.render(
         <Route path='/' exact>
           <Login />
         </Route>
-        <Route path='/home'>
+        <Route path='/overview'>
           <Home />
         </Route>
         <Route path='/repositories'>

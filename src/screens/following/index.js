@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 import AppBar from '../../components/app-bar';
 import SearchBar from '../../components/search-bar';
 import BadgeTitle from '../../components/badge-title';
@@ -9,11 +10,18 @@ import FollowCard from '../../components/follow-card';
 function Following() {
   const [followings, setFollowings] = useState([]);
   const [search, setSearch] = useState('');
+  const history = useHistory();
 
   useEffect(() => {
-    axios.get('https://api.github.com/users/feMoraes0/following').then((response) => {
-      setFollowings((oldState) => [...oldState, ...response.data]);
-    });
+    const localUser = sessionStorage.getItem('user_github');
+    if (localUser === null) {
+      sessionStorage.clear();
+      history.push('/');
+    } else {
+      axios.get('https://api.github.com/users/feMoraes0/following').then((response) => {
+        setFollowings((oldState) => [...oldState, ...response.data]);
+      });
+    }
   }, []);
 
   return (

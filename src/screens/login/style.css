@@ -34,10 +34,10 @@ div.login-box div.form form input, div.login-box div.form form button {
   border: none;
   background-color: rgba(0, 0, 0, .1);
   font-size: 16px;
-  text-transform: capitalize;
 }
 div.login-box div.form form button {
   margin-bottom: 0;
+  text-transform: capitalize;
 }
 div.login-box div.form form button:hover {
   cursor: pointer;

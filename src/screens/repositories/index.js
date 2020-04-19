@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 import AppBar from '../../components/app-bar';
 import RepositoryCard from '../../components/repository-card';
 import SearchBar from '../../components/search-bar';
@@ -11,24 +12,31 @@ function Repositories() {
   const [openIssues, setOpenIssues] = useState(0);
   const [forks, setForks] = useState(0);
   const [search, setSearch] = useState('');
+  const history = useHistory();
 
   useEffect(() => {
-    axios.get('https://api.github.com/users/feMoraes0/repos?per_page=100').then((response) => {
-      setRepositories((oldState) => [...oldState, ...response.data]);
-      let starsCounter = 0;
-      let OpenIssuesCounter = 0;
-      let forksCounter = 0;
-      response.data.map((repository) => {
-        starsCounter += repository.stargazers_count;
-        OpenIssuesCounter += repository.open_issues_count;
-        forksCounter += repository.forks_count;
+    const localUser = sessionStorage.getItem('user_github');
+    if (localUser === null) {
+      sessionStorage.clear();
+      history.push('/');
+    } else {
+      axios.get(`https://api.github.com/users/${localUser}/repos?per_page=100`).then((response) => {
+        setRepositories((oldState) => [...oldState, ...response.data]);
+        let starsCounter = 0;
+        let OpenIssuesCounter = 0;
+        let forksCounter = 0;
+        response.data.map((repository) => {
+          starsCounter += repository.stargazers_count;
+          OpenIssuesCounter += repository.open_issues_count;
+          forksCounter += repository.forks_count;
+          return null;
+        });
+        setStars(starsCounter);
+        setOpenIssues(OpenIssuesCounter);
+        setForks(forksCounter);
         return null;
       });
-      setStars(starsCounter);
-      setOpenIssues(OpenIssuesCounter);
-      setForks(forksCounter);
-      return null;
-    });
+    }
   }, []);
 
   return (
